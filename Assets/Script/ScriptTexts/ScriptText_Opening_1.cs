@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading;
 using UnityEngine.SceneManagement;
 
 
@@ -16,6 +15,7 @@ public class ScriptText_Opening_1 : MonoBehaviour
     public bool textActive; //텍스트가 타자 작동중인지 아닌지에 대한 함수입니다.
     
     int i;
+    int myTime;
 
     public AudioSource audioSource;
     public AudioClip bgm;
@@ -36,7 +36,7 @@ public class ScriptText_Opening_1 : MonoBehaviour
         audioSource.playOnAwake = false;
 
 
-        
+        myTime = 0;
     }
     /*
      IEnumerator Sleep(float time)
@@ -51,7 +51,8 @@ public class ScriptText_Opening_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        myTime++;
+        if (Input.GetMouseButtonDown(0))
         {
             if (textActive == true)
             {
@@ -74,19 +75,26 @@ public class ScriptText_Opening_1 : MonoBehaviour
             }
 
 
-            Thread.Sleep(140);
-           // StartCoroutine(Sleep(10f));
-           if(i<myText.Length)
+            //Thread.Sleep(140);
+            // StartCoroutine(Sleep(10f));
+            if (myTime > 38)
             {
-                currentText += myText[i];
+                myTime = 0;
+                if (i < myText.Length)
+                {
+                    currentText += myText[i];
+                }
+
+                if (myText[i] != ' ')
+                {
+                    audioSource.Play(); //오디오 재생
+                }
+
+                i++;
+
             }
-            
-            if(myText[i]!=' ')
-            {
-                audioSource.Play(); //오디오 재생
-            }
-            
-            i++;
+
+                
 
         }
         else

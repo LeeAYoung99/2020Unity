@@ -52,6 +52,7 @@ public class ST_PuzzleTile : MonoBehaviour
 		{
 			this.GetComponent<Renderer>().enabled = false;
 			this.GetComponent<Collider>().enabled = false;
+            Debug.Log("Success");
 		}
 
 		yield return null;

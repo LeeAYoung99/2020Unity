@@ -32,6 +32,7 @@ TagManager:
   - backgroundImage
   - Element
   - Phone
+  - Barrel
   layers:
   - Default
   - TransparentFX

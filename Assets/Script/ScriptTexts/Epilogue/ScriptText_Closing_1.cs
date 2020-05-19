@@ -60,8 +60,8 @@ public class ScriptText_Closing_1 : MonoBehaviour
             }
             else
             {
-                Debug.Log("NextScene");
-               // SceneManager.LoadScene("Prologue2");
+                //Debug.Log("NextScene");
+                SceneManager.LoadScene("Epilogue2");
             }
 
         }

@@ -23068,7 +23068,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f05d41a8f3b6c348ace27dbc91f1a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1724654877}
+  audioSource: {fileID: 0}
+  open: {fileID: 8300000, guid: c72cad378a5792b48b074654ac9bcc8f, type: 3}
+  close: {fileID: 8300000, guid: 2af6d41722eb09b46acbdeb94fc67d96, type: 3}
+  inventory: {fileID: 434062186}
   closebutton: {fileID: 1266973031}
   openbutton: {fileID: 1320856932}
   Left1: {fileID: 223974226}
@@ -23958,6 +23961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f05d41a8f3b6c348ace27dbc91f1a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  open: {fileID: 8300000, guid: c72cad378a5792b48b074654ac9bcc8f, type: 3}
+  close: {fileID: 8300000, guid: 2af6d41722eb09b46acbdeb94fc67d96, type: 3}
   inventory: {fileID: 1724654877}
   closebutton: {fileID: 1266973031}
   openbutton: {fileID: 1320856932}

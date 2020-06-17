@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    public AudioSource audioSource;
+
+    public AudioClip open;
+    public AudioClip close;
+
     public GameObject inventory;
     public GameObject closebutton;
     public GameObject openbutton;
     public GameObject Left1, Left2, Left3, Right1, Right2, Right3, Boss, Book, Wall, Beam;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         closebutton.SetActive(false);
         inventory.SetActive(false);
+       
     }
     public void OpenInventory()
     {
+        audioSource.clip = open;
+        audioSource.Play(); //오디오 재생
+
+        
         inventory.SetActive(true);
         closebutton.SetActive(true);
 
@@ -32,6 +43,9 @@ public class InventoryController : MonoBehaviour
     }
     public void CloseInventory()
     {
+        audioSource.clip = close;
+        audioSource.Play(); //오디오 재생
+
         inventory.SetActive(false);
         closebutton.SetActive(false);
         openbutton.SetActive(true);

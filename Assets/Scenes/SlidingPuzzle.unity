@@ -363,5 +363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlidingTile_3by3
       objectReference: {fileID: 0}
+    - target: {fileID: 8955559482673383318, guid: c2a572f539dd4de498ca243774e5acbb,
+        type: 3}
+      propertyPath: PuzzleImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 4a764f559f5fd8247812f6cb28df19c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a572f539dd4de498ca243774e5acbb, type: 3}

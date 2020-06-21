@@ -13,10 +13,13 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
     public static Vector2 defaultposition;
 
     public Sprite newitem;
+    public Sprite newitem2;
     public Image item1;
+    public Image item2;
     public bool is_Combine;
     bool Beam_Trigger;
     bool Item1_Trigger;
+    bool Item2_Trigger;
 
     public GameObject beam_light;
     public GameObject b_light;
@@ -25,6 +28,7 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
     void Start()
     {
         Item1_Trigger = false;
+        Item2_Trigger = false;
         itemTr = GetComponent<Transform>();
         inventoryTr = GameObject.Find("Inventory").GetComponent<Transform>();
         itemListTr = GameObject.Find("ItemList").GetComponent<Transform>();
@@ -89,6 +93,12 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
             GameObject.Find("BoolManager").GetComponent<BoolManager>().is_Combine = true; //이제 Item1이 조합이 된 상태
             item1.sprite = newitem;
         }
+        if(Item2_Trigger == true)
+        {
+            Destroy(gameObject, 0);
+            GameObject.Find("BoolManager").GetComponent<Stage2BoolManager>().is_Combine = true;
+            item2.sprite = newitem2;
+        }
         if (Beam_Trigger == true)
         {
             Destroy(this.gameObject, 0);//빔프로젝터 좌표범위에서 드래그를 멈추고 드롭을 한다면 아이템 삭제.
@@ -103,6 +113,10 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         {
             Item1_Trigger = true;
         }
+        if (other.gameObject.tag == "Item2")
+        {
+            Item2_Trigger = true;
+        }
 
     }
 
@@ -112,6 +126,9 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         {
             Item1_Trigger = false;
         }
-
+        if (other.gameObject.tag == "Item2")
+        {
+            Item2_Trigger = false;
+        }
     }
 }

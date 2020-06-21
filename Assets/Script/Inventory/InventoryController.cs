@@ -14,7 +14,7 @@ public class InventoryController : MonoBehaviour
     public bool isInven;
     public GameObject closebutton;
     public GameObject openbutton;
-    public GameObject Left1, Left2, Left3, Right1, Right2, Right3, Boss, Book, Wall, Beam;
+   
     private void Start()
     {
         //openAS = GetComponent<AudioSource>();

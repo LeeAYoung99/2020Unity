@@ -6,6 +6,8 @@ public class TrashCan : MonoBehaviour
 {
     public bool is_can;
     public GameObject item;
+    public GameObject trashpanel;
+    public Camera left1;
     //public Sprite newitem;
     // Start is called before the first frame update
     void Start()
@@ -15,20 +17,26 @@ public class TrashCan : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
-        
-    }
-    void OnMouseDown()
-    {
-        if (gameObject.tag == "trash" && is_can == false)
+        if (Input.GetMouseButtonDown(0))
         {
+            if (GameObject.Find("ClickManager").GetComponent<ClickManager>().left1 == true && is_can == false)
+            {
+                RaycastHit hit = new RaycastHit();
 
-            item.SetActive(true);
-            //item.sprite = newitem;
-            //item = Resources.Load<Sprite>("axe");
-            is_can = true;
+                Ray ray = left1.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray.origin, ray.direction, out hit))
+                {
+                    if (hit.transform.gameObject.tag == "trash")
+                    {
+                        item.SetActive(true);
+                        is_can = true;
+                        trashpanel.SetActive(true);
+                    }
+                }
+            }
         }
-       
     }
 }

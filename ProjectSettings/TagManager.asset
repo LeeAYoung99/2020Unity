@@ -33,6 +33,7 @@ TagManager:
   - Element
   - Phone
   - Barrel
+  - Item1
   layers:
   - Default
   - TransparentFX

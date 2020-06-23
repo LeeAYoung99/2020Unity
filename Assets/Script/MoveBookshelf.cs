@@ -9,9 +9,13 @@ public class MoveBookshelf : MonoBehaviour
     bool is_ing;
     public float a;
 
+    public AudioSource audioSource;
+    public AudioClip shelf;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         is_click = false;
         is_ing = false;
         a = 0;
@@ -27,6 +31,8 @@ public class MoveBookshelf : MonoBehaviour
             {
                 a += 0.00005f;
                 bookshelf.transform.Translate(0, 0, a);
+
+                audioSource.Play(); //오디오 재생
                 if (a > 0.025)
                 {
                     is_click = true;
@@ -35,6 +41,6 @@ public class MoveBookshelf : MonoBehaviour
             }
 
         }*/
-        
+
     }
 }

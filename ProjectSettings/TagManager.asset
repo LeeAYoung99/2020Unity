@@ -33,6 +33,16 @@ TagManager:
   - Element
   - Phone
   - Barrel
+  - Item1
+  - RadioActivity
+  - Clinic
+  - Medicine
+  - Main2
+  - MedicineChest
+  - Liquid
+  - Medicine1
+  - Medicine2
+  - Item2
   layers:
   - Default
   - TransparentFX

@@ -45,5 +45,10 @@ public class Back : MonoBehaviour
         BossCamera.gameObject.SetActive(false);
         BeamCamera.gameObject.SetActive(false);
         WallCamera.gameObject.SetActive(false);
+        GameObject.Find("ClickManager").GetComponent<ClickManager>().main = true;
+        GameObject.Find("ClickManager").GetComponent<ClickManager>().right3 = false;
+        GameObject.Find("ClickManager").GetComponent<ClickManager>().left1 = false;
+        GameObject.Find("ClickManager").GetComponent<ClickManager>().beam = false;
+        GameObject.Find("ClickManager").GetComponent<ClickManager>().boss = false;
     }
 }

@@ -11,7 +11,7 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
     private CanvasGroup canvasGroup;
     public static GameObject draggingItem = null;
     public static Vector2 defaultposition;
-
+    //public GameObject ItemB;
     public Sprite newitem;
     public Sprite newitem2;
     public Image item1;
@@ -20,7 +20,8 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
     bool Beam_Trigger;
     bool Item1_Trigger;
     bool Item2_Trigger;
-
+    bool ItemA_Trigger;
+    public bool ItemB_Trigger;
     public GameObject beam_light;
     public GameObject b_light;
     //public GameObject Item1, Item2, Item3, Item4, Item5, Item6, Item7, Item8, Item9, Item10;
@@ -34,11 +35,13 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         itemListTr = GameObject.Find("ItemList").GetComponent<Transform>();
         canvasGroup = GetComponent<CanvasGroup>();
         is_Combine = false; //Item1 조합이 안되어있는 상태
+        ItemB_Trigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (GameObject.Find("BoolManager").GetComponent<BoolManager>().is_Combine == true)//아이템이 조합이 되고
         {
             if (GameObject.Find("ClickManager").GetComponent<ClickManager>().beam == true)//beam Camera활성화 된 상태에서
@@ -56,7 +59,29 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
                     Beam_Trigger = false;
             }
         }
-
+        if (GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().isA == true)
+        {
+            Debug.Log("FFFFF");
+            if (GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().isB == true)
+            {
+                Debug.Log("CCCCCCCC");
+                if (GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().ItemB.transform.position.x >= 1180 &&
+                    GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().ItemB.transform.position.x <= 1350)
+                {
+                    Debug.Log("BBBB");
+                    if (GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().ItemB.transform.position.y >= 820 &&
+                    GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().ItemB.transform.position.y <= 990)
+                    {
+                        ItemB_Trigger = true;
+                        Debug.Log("AAAA");
+                    }
+                    else
+                        ItemB_Trigger = false;
+                }
+                else
+                    ItemB_Trigger = false;
+            }
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -105,6 +130,11 @@ public class Dragging : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
             Debug.Log("AS");
             beam_light.SetActive(true);
             b_light.SetActive(true);
+        }
+        if (ItemB_Trigger == true)
+        {
+            Destroy(gameObject, 0);
+            GameObject.Find("Clinicpuzzle").GetComponent<ClinicPuzzle>().ItemBA.SetActive(true);
         }
     }
     void OnTriggerEnter(Collider other)

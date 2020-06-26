@@ -43,6 +43,8 @@ TagManager:
   - Medicine1
   - Medicine2
   - Item2
+  - ClinicA
+  - ClinicB
   layers:
   - Default
   - TransparentFX

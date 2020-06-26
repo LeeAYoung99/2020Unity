@@ -306,7 +306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -496,7 +498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -1806,16 +1810,6 @@ MonoBehaviour:
   isInven: 0
   closebutton: {fileID: 1266973031}
   openbutton: {fileID: 1320856932}
-  Left1: {fileID: 327434640}
-  Left2: {fileID: 1803085796}
-  Left3: {fileID: 1401987848}
-  Right1: {fileID: 1752828995}
-  Right2: {fileID: 945067676}
-  Right3: {fileID: 706261494}
-  Boss: {fileID: 571388983}
-  Book: {fileID: 23267018}
-  Wall: {fileID: 1064630975}
-  Beam: {fileID: 1293104264}
 --- !u!4 &121955084
 Transform:
   m_ObjectHideFlags: 0
@@ -1828,7 +1822,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123482587
 GameObject:
@@ -4750,7 +4744,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -6215,7 +6211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -9150,7 +9148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -10757,6 +10757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookshelf: {fileID: 93624574}
   a: 0
+  audioSource: {fileID: 0}
+  shelf: {fileID: 0}
 --- !u!65 &673574435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12461,6 +12463,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 652855197}
     m_Modifications:
+    - target: {fileID: 5011485000101181602, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: c4cbb6a115f7de941bca18f9f9d400a8,
+        type: 3}
+    - target: {fileID: 5011485000101181603, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 30.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011485000101181603, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -132.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011485000101181603, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1013.7511
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011485000101181603, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 427.37375
+      objectReference: {fileID: 0}
     - target: {fileID: 5011485000288883867, guid: f03ffcf105c0a0147b4c0cc5e0321188,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12570,6 +12598,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011485000668632460, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c94900d208c6e243b937c3a73dba94c,
+        type: 3}
+    - target: {fileID: 5011485000668632460, guid: f03ffcf105c0a0147b4c0cc5e0321188,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5011485000668632461, guid: f03ffcf105c0a0147b4c0cc5e0321188,
         type: 3}
@@ -12802,7 +12841,7 @@ Transform:
   - {fileID: 1721954636}
   - {fileID: 1921158442}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806968847
 GameObject:
@@ -13448,7 +13487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -22311,7 +22352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -22892,7 +22935,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -26373,7 +26418,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -30519,7 +30566,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newitem: {fileID: 0}
+  newitem2: {fileID: 0}
   item1: {fileID: 0}
+  item2: {fileID: 0}
   is_Combine: 0
   beam_light: {fileID: 0}
   b_light: {fileID: 0}
@@ -34422,7 +34471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091614422
 GameObject:
@@ -34800,7 +34849,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2101165577
 GameObject:

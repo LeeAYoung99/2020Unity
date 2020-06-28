@@ -42,9 +42,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/SciFi_Industrial_SampleLayout.unity
-    guid: b2fa8882363c4644b93046de18bcbf19
-  - enabled: 1
     path: Assets/Scenes/Epilogue/Epilogue1.unity
     guid: 1d47393f1c95c45458581a00a03525e7
   - enabled: 1

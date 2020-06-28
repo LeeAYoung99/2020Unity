@@ -7,6 +7,7 @@ public class Back : MonoBehaviour
     public Camera Left1Camera, Left2Camera, Left3Camera, Right1Camera, Right2Camera, Right3Camera, BookCamera, MainCamera, BossCamera, BeamCamera, WallCamera;
     public GameObject ClickArea;//아영 right-3
     public GameObject PhoneUI;//아영
+    public GameObject DoorLockUI;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,14 @@ public class Back : MonoBehaviour
             ClickArea.SetActive(true);
             PhoneUI.SetActive(false);
             ClickManager.CanvasUI = 0;
+
+            return;
+        }
+        if(ClickManager.DoorLockCanvasUI==1)
+        {
+            ClickArea.SetActive(true);
+            DoorLockUI.SetActive(false);
+            ClickManager.DoorLockCanvasUI = 0;
 
             return;
         }

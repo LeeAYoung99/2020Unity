@@ -6,10 +6,10 @@ public class ClickManager : MonoBehaviour
 {
 
     public Camera Left1Camera, Left2Camera, Left3Camera, Right1Camera, Right2Camera, Right3Camera, BookCamera, MainCamera, BossCamera, BeamCamera, WallCamera;
-    public GameObject PhoneUI;//아영
-    public static int CanvasUI;//아영
+    public GameObject PhoneUI, DoorLockUI;//아영
+    public static int CanvasUI, DoorLockCanvasUI;//아영
     public GameObject ClickArea;//아영 right-3
-    public bool main, left1, right3, beam, boss;
+    public bool main, left1, right3, beam, boss, book;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,7 @@ public class ClickManager : MonoBehaviour
         right3 = false;
         beam = false;
         boss = false;
+        book = false;
         Left1Camera.gameObject.SetActive(false);
         Left2Camera.gameObject.SetActive(false);
         Left3Camera.gameObject.SetActive(false);
@@ -33,6 +34,7 @@ public class ClickManager : MonoBehaviour
 
         //아영
         CanvasUI = 0;
+        DoorLockCanvasUI = 0;
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class ClickManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            
             if (main == true)
             {
                 RaycastHit hit = new RaycastHit();
@@ -106,6 +109,7 @@ public class ClickManager : MonoBehaviour
                         Left1Camera.gameObject.SetActive(false);
                         Right2Camera.gameObject.SetActive(false);
                         Right3Camera.gameObject.SetActive(false);
+                        Right3Camera.gameObject.SetActive(false);
                         BookCamera.gameObject.SetActive(false);
                         BossCamera.gameObject.SetActive(false);
                         MainCamera.gameObject.SetActive(false);
@@ -146,6 +150,7 @@ public class ClickManager : MonoBehaviour
                         right3 = true;
                         left1 = false;
                         main = false;
+                        book = false;
                         //ClickArea.SetActive(false);
                     }
                     if (hit.transform.gameObject.tag == "Boss")
@@ -163,6 +168,7 @@ public class ClickManager : MonoBehaviour
                         BeamCamera.gameObject.SetActive(false);
                         WallCamera.gameObject.SetActive(false);
                         main = false;
+                        book = false;
                         boss = true;
                     }
                     if (hit.transform.gameObject.tag == "Book")
@@ -179,6 +185,8 @@ public class ClickManager : MonoBehaviour
                         MainCamera.gameObject.SetActive(false);
                         BeamCamera.gameObject.SetActive(false);
                         WallCamera.gameObject.SetActive(false);
+                        book = true;
+                        boss = false;
                         main = false;
                     }
                     if (hit.transform.gameObject.tag == "Beam")
@@ -252,6 +260,26 @@ public class ClickManager : MonoBehaviour
                     }
                 }
             }
+            //아영이넣음2
+            if (book == true)
+            {
+                RaycastHit hit = new RaycastHit();
+
+                Ray ray = BookCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray.origin, ray.direction, out hit))
+                {
+                    
+                    if (hit.transform.gameObject.tag == "DoorLock")
+                    {
+                        Debug.Log("ClickdDoorlock");
+                        DoorLockUI.SetActive(true);
+                        DoorLockCanvasUI = 1;
+                    }
+                }
+            }
+            
+            
+
         }
     }
 

@@ -45,6 +45,7 @@ TagManager:
   - Item2
   - ClinicA
   - ClinicB
+  - DoorLock
   layers:
   - Default
   - TransparentFX

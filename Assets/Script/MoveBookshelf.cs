@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveBookshelf : MonoBehaviour
 {
@@ -24,23 +25,26 @@ public class MoveBookshelf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetMouseButton(0))
+        /**/
+
+    }
+
+    public void Move()
+    {
+        
+        if (is_click == false)
         {
+            a += 0.00005f;
+            bookshelf.transform.Translate(0, 0, a);
 
-            if (is_click == false)
+            audioSource.Play(); //오디오 재생
+            if (a > 0.025)
             {
-                a += 0.00005f;
-                bookshelf.transform.Translate(0, 0, a);
-
-                audioSource.Play(); //오디오 재생
-                if (a > 0.025)
-                {
-                    is_click = true;
-                    a = 0f;
-                }
+                //SceneManager.LoadScene("SciFi_Industrial_SampleLayout");
+                is_click = true;
+                a = 0f;
             }
-
-        }*/
+        }
 
     }
 }

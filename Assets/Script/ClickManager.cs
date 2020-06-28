@@ -7,7 +7,7 @@ public class ClickManager : MonoBehaviour
 
     public Camera Left1Camera, Left2Camera, Left3Camera, Right1Camera, Right2Camera, Right3Camera, BookCamera, MainCamera, BossCamera, BeamCamera, WallCamera;
     public GameObject PhoneUI, DoorLockUI;//아영
-    public static int CanvasUI, DoorLockCanvasUI;//아영
+    public static int CanvasUI, DoorLockCanvasUI, Unlocked;//아영
     public GameObject ClickArea;//아영 right-3
     public bool main, left1, right3, beam, boss, book;
 
@@ -35,11 +35,18 @@ public class ClickManager : MonoBehaviour
         //아영
         CanvasUI = 0;
         DoorLockCanvasUI = 0;
+        Unlocked = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Unlocked==1)
+        {
+            GameObject.Find("BookShelf").GetComponent<MoveBookshelf>().Move();
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             

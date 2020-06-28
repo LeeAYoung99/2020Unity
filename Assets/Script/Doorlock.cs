@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Doorlock : MonoBehaviour
@@ -467,7 +468,9 @@ public class Doorlock : MonoBehaviour
     {
         if(CheckPassword())
         {
-            Debug.Log("비밀번호 일치!");
+            ClickManager.Unlocked = 1;
+            SceneManager.LoadScene("SciFi_Industrial_SampleLayout");
+            //
         }
     }
 }
